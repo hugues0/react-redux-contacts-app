@@ -11,7 +11,7 @@ const Home = () => {
           </Link>
         </div>
         <div className="col-md-6 mx-auto">
-            <h1>Welcome to React contact book</h1>
+          <h1>Welcome to React contact book</h1>
         </div>
       </div>
     </div>

@@ -5,7 +5,9 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "react-toastify/dist/ReactToastify.css"
 import { BrowserRouter as  Router} from 'react-router-dom';
+import { createStore } from 'redux';
 
+const store = createStore()
 ReactDOM.render(
   <React.StrictMode>
     <Router>
