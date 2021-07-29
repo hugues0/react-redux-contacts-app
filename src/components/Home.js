@@ -1,9 +1,15 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Home = () => {
   const contacts = useSelector((state) => state);
+  const dispatch = useDispatch()
+  const deleteContact = (id) =>{
+    dispatch({type:"DELETE_CONTACT",payload:id});
+    toast.success("Contact successfully deleted")
+  }
   return (
     <div className="container">
       <div className="row">
@@ -37,7 +43,7 @@ const Home = () => {
                     >
                       Edit
                     </Link>
-                    <button type="button" className="btn btn-small btn-danger">Delete</button>
+                    <button type="button" className="btn btn-small btn-danger" onClick={()=>deleteContact(contact.id)}>Delete</button>
                   </td>
                 </tr>
               ))}
